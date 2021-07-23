@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">HSE 2021</string>
+    <string name="sample_text">Hello world!</string>
+    <string name="github"><a href='https://github.com/glebvi1?tab=repositories'>Github</a></string>
+</resources>
