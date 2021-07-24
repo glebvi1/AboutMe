@@ -16,17 +16,15 @@
             android:id="@+id/idea"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="25dp"
+            android:textSize="25sp"
             android:textStyle="bold"
-            android:textColor="@color/black"
-            android:text="Идея проекта" />
+            android:textColor="@color/black"/>
 
         <TextView
             android:id="@+id/info"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:layout_height="wrap_content"/>
     </androidx.appcompat.widget.LinearLayoutCompat>
 
 

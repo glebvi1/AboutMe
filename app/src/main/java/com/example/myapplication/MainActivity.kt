@@ -26,16 +26,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun data(): List<Item> {
-        val projectInfo = "Когда у школьника возникает желение научиться чему-то новому, то ему " +
-                "может понадобиться учитель. Репититоры дороги и не всегда эффективны.\n" +
-                "Мы предлагаем другое решение: наше приложение позволяет находить школьников, " +
-                "готовых обмениваться знаниями.\n" +
-                "Например, 1-й школьник умеет петь, но не умеет танцевать (хочет научиться), ему нужно" +
-                " найти другого школьника, умееющего танцевать, но не умееющего петь (хочет науиться)." +
-                "Наше приложение позволяет осуществить поиск."
+        val projectInfo = getString(R.string.project_info)
 
         val myProject = MyProject(
-            "Вязов Глеб", R.drawable.ic_launcher_background, "Закончил 9 класс")
+            getString(R.string.name), R.drawable.ic_launcher_background, getString(R.string.class1))
         val skill: List<Skill> = listOf(
             Skill("Python", "3 year"),
             Skill("Java Spring", "1 year"),
@@ -47,9 +41,9 @@ class MainActivity : AppCompatActivity() {
         )
 
         val project: Item.ProfileItem = Item.ProfileItem(myProject)
-        val header: Item.Header = Item.Header("Мои навыки")
+        val header: Item.Header = Item.Header(getString(R.string.my_skills))
         val skills: Item.Skills = Item.Skills(skill)
 
-        return listOf(project, Item.ProjectInfo("SkillsExchange", projectInfo), header, skills)
+        return listOf(project, Item.ProjectInfo(getString(R.string.project_name), projectInfo), header, skills)
     }
 }
