@@ -1,18 +1,27 @@
 package com.example.myapplication.adapters
 
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.*
+import android.widget.Button
+import android.widget.ImageButton
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myapplication.MainActivity
 import com.example.myapplication.R
+import com.example.myapplication.filter.FilterActivity
 import com.example.myapplication.model.Item
 
-class MyProjectAdapter(private val items: List<Item>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class MyProjectAdapter(private val context: Context,
+                       private val items: List<Item>)
+    : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     class MyProjectHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private var image: ImageView = itemView.findViewById(R.id.image)
@@ -34,11 +43,18 @@ class MyProjectAdapter(private val items: List<Item>) : RecyclerView.Adapter<Rec
         }
     }
 
-    class HeaderHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class HeaderHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private var header: TextView = itemView.findViewById(R.id.header)
+        private var filter: ImageButton = itemView.findViewById(R.id.filter_button)
 
         fun onBind(item: Item.Header) {
             header.text = item.header
+
+            filter.setOnClickListener {
+                Log.i("FilterActivity", "Intent to FilterActivity")
+                val intent = Intent(context, FilterActivity::class.java)
+                startActivity(context, intent, null)
+            }
         }
     }
 
