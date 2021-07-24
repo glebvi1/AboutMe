@@ -10,4 +10,11 @@
     <string name="project_name">SkillsExchange</string>
     <string name="my_skills">Мои навыки</string>
     <string name="github">GitHub</string>
+    <string name="apply">Применить</string>
+    <string name="_1m">1 месяц</string>
+    <string name="_3m">3 месяца</string>
+    <string name="_1y">1 год</string>
+    <string name="_3y">3 года</string>
+    <string name="all">Все</string>
+    <string name="filter">Фильтр</string>
 </resources>
