@@ -50,8 +50,13 @@ class MyProjectAdapter(private val context: Context,
         fun onBind(item: Item.Header) {
             header.text = item.header
 
+            if (FilterActivity.isAll) {
+                filter.setImageResource(R.drawable.filter_icon)
+            } else {
+                filter.setImageResource(R.drawable.filter_icon_1)
+            }
+
             filter.setOnClickListener {
-                Log.i("FilterActivity", "Intent to FilterActivity")
                 val intent = Intent(context, FilterActivity::class.java)
                 startActivity(context, intent, null)
             }

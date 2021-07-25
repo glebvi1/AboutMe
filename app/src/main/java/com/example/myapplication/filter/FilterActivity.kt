@@ -28,8 +28,6 @@ class FilterActivity : AppCompatActivity() {
         binding = ActivityFilterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        Log.i("FilterActivity", "FilterActivity")
-
         all = binding.all
         treeYears = binding.treeYears
         oneYear = binding.oneYear
@@ -88,9 +86,24 @@ class FilterActivity : AppCompatActivity() {
         }
 
         apply!!.setOnClickListener {
+
+            isAll = isAllCheckBox()
+
             MainActivity.skillsData.setFilter(filter)
             startActivity(Intent(this@FilterActivity, MainActivity::class.java))
         }
+    }
+
+    private fun isAllCheckBox(): Boolean {
+        return all!!.isChecked ||
+                (treeYears!!.isChecked &&
+                oneYear!!.isChecked &&
+                treeMonths!!.isChecked &&
+                oneMonth!!.isChecked)
+    }
+
+    companion object {
+        var isAll: Boolean = true
     }
 
 }
